@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import '../App.css'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const [count, setCount] = useState(0)
+  const nav = useNavigate()
 
   return (
     <div className="App">
@@ -19,6 +21,12 @@ const Home = () => {
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
+        </button>
+        <button onClick={() => nav('/about')}>
+          About Us
+        </button>
+        <button onClick={() => nav('/contact')}>
+          Contact Us 
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
